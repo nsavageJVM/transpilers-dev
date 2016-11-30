@@ -1,0 +1,6 @@
+subprojects {
+
+    group = 'org.transpilers'
+    version = 'blog_version'
+
+}
