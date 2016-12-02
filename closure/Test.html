@@ -2,18 +2,25 @@
 <html>
 <head>
 <title>widjdev.list</title>
-<script src="closure-library/closure/goog/base.js"></script>  <!-- MAKE SURE THIS POINTS TO RIGHT PLACE -->
-<script type="text/javascript" src="dist/app.min.js"></script><!-- note the widgdevComponent is not imported -->
+  <!-- script src="closure-library/closure/goog/base.js"></script -->
+<script type="text/javascript" src="dist/app.min.js" ></script>
+
+  <link href="node_modules/google-closure-library/closure/css/inlay/g-base.css" rel="stylesheet">
+  <style type="text/css">
+      body { padding: 0; margin: 0; font-family: arial; }
+      #menu { margin:10px; padding-left: 10px; width:20%;  }
+      #root { margin:10px; padding-left: 10px; width:20%;  }
+      div.goog-toolbar-button { margin-left:10px;font-size:22px;     }
+      #dep_comp{ margin:20px 0 0 20px; display: block; width:20%; color:blue;font-size:18px; border: 1px solid red; }
 
 
-  <link href="closure-library/closure/css/inlay/g-base.css" rel="stylesheet">
- 
-  
+    </style>
+
 </head>
 <body onload=" main()">
 <div id="menu"></div>
-<div id="root">
-</div>
+<div id="root"></div>
+<div id="dep_comp"></div>
 
 <script>
 function main() {

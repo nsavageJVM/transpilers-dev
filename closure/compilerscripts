@@ -1,0 +1,7 @@
+CLOSURE_HOME
+node_modules/google-closure-library
+
+java -jar compiler.jar --compilation_level=ADVANCED --closure_entry_point=dev.app  \
+                       --only_closure_dependencies  --js=./node_modules/google-closure-library \
+                       --js src/main.js --js src/component.js --js_output_file  dist/app.min.js
+
