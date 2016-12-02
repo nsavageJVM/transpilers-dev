@@ -1,11 +1,5 @@
 import org.jsweet.transpiler.EcmaScriptComplianceLevel;
 
-apply plugin: 'java'
-apply plugin: 'maven'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 buildscript {
     boolean snapshotMode = true;
     project.ext.repoType =  snapshotMode ? 'snapshot' : 'release';
@@ -25,6 +19,20 @@ buildscript {
             transitive = true }
     }
 }
+
+plugins {
+    id "com.moowork.node" version "0.11"
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'base'
+apply plugin: 'org.jsweet.jsweet-gradle-plugin'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 
 repositories {
     mavenCentral()
@@ -46,7 +54,12 @@ compileJava {
     enabled = false
 }
 
-apply plugin: 'org.jsweet.jsweet-gradle-plugin'
+node {
+    version = '5.2.0'
+    npmVersion = '3.3.12'
+    download = true
+}
+
 
 jsweet {
     verbose = true
