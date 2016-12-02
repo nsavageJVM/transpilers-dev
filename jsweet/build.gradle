@@ -1,0 +1,98 @@
+import org.jsweet.transpiler.EcmaScriptComplianceLevel;
+
+buildscript {
+    boolean snapshotMode = true;
+    project.ext.repoType =  snapshotMode ? 'snapshot' : 'release';
+    project.ext.dependenciesVersionSuffix = snapshotMode ? '-SNAPSHOT' : '';
+
+    println "repoType=" + project.repoType
+    println "dependenciesVersionSuffix=" + project.dependenciesVersionSuffix
+
+    repositories {
+        mavenCentral()
+        maven { url "http://repository.jsweet.org/artifactory/libs-" + project.repoType + "-local" }
+        maven { url "http://repository.jsweet.org/artifactory/plugins-" + project.repoType + "-local" }
+        maven { url "http://google-diff-match-patch.googlecode.com/svn/trunk/maven" }
+    }
+    dependencies {
+        classpath('org.jsweet:jsweet-gradle-plugin:1.2.0-SNAPSHOT') { //
+            transitive = true }
+    }
+}
+
+plugins {
+    id "com.moowork.node" version "0.11"
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'base'
+apply plugin: 'org.jsweet.jsweet-gradle-plugin'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+    maven { url "http://repository.jsweet.org/artifactory/libs-" + project.repoType + "-local" }
+    maven { url "http://google-diff-match-patch.googlecode.com/svn/trunk/maven" }
+}
+
+configurations {
+    jsweetcorestrict
+}
+
+dependencies {
+    compile group: 'org.jsweet', name: 'jsweet-transpiler', version:"1.2.0" + project.dependenciesVersionSuffix
+    compile group: 'org.jsweet.candies', name: 'jsweet-core', version:"1.2.0" + project.dependenciesVersionSuffix
+    compile group: 'org.jsweet.candies', name: 'es6-promise', version:"0.0.0" + project.dependenciesVersionSuffix
+}
+
+compileJava {
+    enabled = false
+}
+
+node {
+    version = '5.2.0'
+    npmVersion = '3.3.12'
+    download = true
+}
+
+
+jsweet {
+    verbose = true
+    encoding = 'UTF-8'
+    sourceMap = true
+    outDir = new File('target/js')
+    targetVersion = EcmaScriptComplianceLevel.ES3
+    includes = ['**/app/dev/transpile/**/*.java']
+}
+
+File stagingFolder = new File(project.projectDir, "staging")
+task deployArtifact(type: Copy, dependsOn: 'jsweet') {
+    // clean older build artifacts
+    if (stagingFolder.exists()) stagingFolder.delete()
+
+    File targetFolder = new File(project.projectDir, "target/js/app/dev/transpile")
+
+    from targetFolder
+    into stagingFolder
+
+}
+
+task deployStatic(type: Copy, dependsOn: 'deployArtifact') {
+
+    File targetFolder = new File(project.projectDir, "Test.html")
+
+    from targetFolder
+    into stagingFolder
+
+}
+
+
+task createdirs {
+    sourceSets*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}

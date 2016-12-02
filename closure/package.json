@@ -1,0 +1,19 @@
+{
+  "name": "closure-transpile",
+  "version": "1.0.0",
+  "description": "software engineering transpile patterns google closure",
+
+  "keywords": [
+    "transpile",
+    "google",
+    "closure",
+    "compiler"
+  ],
+  "author": "nsavagejvm",
+  "license": "MIT",
+
+  "devDependencies": {
+    "google-closure-library": "latest"
+
+  }
+}
