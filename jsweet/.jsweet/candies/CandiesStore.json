@@ -1,0 +1,35 @@
+{
+  "candies": [
+    {
+      "name": "jsweet-core",
+      "version": "1.2.0-SNAPSHOT",
+      "lastUpdateTimestamp": 1480194124000,
+      "modelVersion": "unknown",
+      "transpilerVersion": "1.2.0",
+      "jsOutputDirPath": "/home/ubu/latest react_dev/transpilers_blog/jsweet/.jsweet/candies/js",
+      "jsDirPath": "META-INF/resources/webjars/jsweet-core/1.2.0-SNAPSHOT",
+      "jsFilesPaths": []
+    },
+    {
+      "name": "es6-promise",
+      "version": "0.0.0-SNAPSHOT",
+      "lastUpdateTimestamp": 1468699650000,
+      "modelVersion": "unknown",
+      "transpilerVersion": "1.2.0",
+      "jsOutputDirPath": "/home/ubu/latest react_dev/transpilers_blog/jsweet/.jsweet/candies/js",
+      "jsDirPath": "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT",
+      "jsFilesPaths": [
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/promise.min.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/es6-promise.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/test/mocha.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/test/worker.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/test/json3.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/test/es6-promise.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/test/browserify.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/test/es6-promise.min.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/promise.js",
+        "META-INF/resources/webjars/es6-promise/0.0.0-SNAPSHOT/es6-promise.min.js"
+      ]
+    }
+  ]
+}
