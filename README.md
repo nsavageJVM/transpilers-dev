@@ -4,6 +4,8 @@
 
 ### Windows with no java installed  
 
+  Extract the file java-windows.zip into a directory `java-windows`  
+
 `export JAVA_HOME=~/transpilers-dev/java-windows` 
 `./gradlew install`
 
