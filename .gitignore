@@ -7,21 +7,19 @@ npm-debug.log*
 node_modules
 jspm_packages
 
+.ts
+
 dist
 .idea
 info.txt
-<<<<<<< HEAD
-
 
 .gradle
 /build/
-=======
 java-windows
 
 .gradle
 /build/
 jsweet/build
->>>>>>> 8fe47e32a8b328815cdc2247886d511536155cc4
 
 # Ignore Gradle GUI config
 gradle-app.setting
