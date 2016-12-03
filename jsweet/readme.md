@@ -1,5 +1,7 @@
 # Transpile Java 
 
+see [The javascript transpile dialectic part 1](http://nsavagejvm.netlify.com/2016/12/the-javascript-transpile-dialectic-part-1/)
+
 [jsweet](http://www.jsweet.org/)   
  
 
