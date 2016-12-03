@@ -8,6 +8,7 @@ node_modules
 jspm_packages
 
 .ts
+.jsweet
 
 dist
 .idea
