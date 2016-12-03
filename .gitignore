@@ -21,6 +21,7 @@ java-windows
 .gradle
 /build/
 jsweet/build
+target
 
 # Ignore Gradle GUI config
 gradle-app.setting
