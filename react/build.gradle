@@ -8,8 +8,10 @@ version '0.0.1'
 buildDir = 'dist'
 
 node {
-  version = '5.2.0'
-  npmVersion = '3.3.12'
+
+  version = '6.9.1'
+  npmVersion = '4.0.2'
+
   download = true
 }
 
@@ -18,6 +20,11 @@ task bundle(type: NpmTask) {
   inputs.dir(new File('src'))
   outputs.dir(new File('dist'))
   args = ['run', 'bundle']
+}
+
+task runDevServer (type: NodeTask) {
+script =  file('server.js')
+
 }
 
 bundle.dependsOn(npm_install)

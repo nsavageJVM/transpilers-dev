@@ -14,7 +14,11 @@ goog.require('dev.app.Component'); // this is a custom dependency
   toolbar.addChild(button, true);
   goog.style.setStyle(goog.dom.$('menu'), 'color', '#0080ff');
   goog.style.setStyle(goog.dom.$('menu'), 'position', 'relative');
+<<<<<<< HEAD
     goog.style.setStyle(goog.dom.$('menu'), 'font-size ', ':22px');
+=======
+  goog.style.setStyle(goog.dom.$('menu'), 'font-size ', ':22px');
+>>>>>>> 8fe47e32a8b328815cdc2247886d511536155cc4
   goog.style.setStyle(goog.dom.$('menu'), {'margin-top':'20px', 'margin-bottom':'20px'});
 
 
