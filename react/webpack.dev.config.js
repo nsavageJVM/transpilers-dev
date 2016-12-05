@@ -28,7 +28,7 @@ module.exports = {
           }
         }),
         new HtmlWebpackPlugin({
-          title: 'Boot React',
+          title: 'transpile dev',
           template: path.join(__dirname, 'assets/index-template.html')
         })
       ],
