@@ -1,20 +1,5 @@
 /* Generated from Java with JSweet 1.2.0-SNAPSHOT - http://www.jsweet.org */ var app;
-(function (app) {
-    var dev;
-    (function (dev) {
-        var transpile;
-        (function (transpile) {
-            var ConcurrentSpinner = (function () {
-                function ConcurrentSpinner(spinner) {
-                    var _this = this;
-                    this.spinner = spinner;
-                    this.startRace().then(function (times) { return _this.onSuccess(times); }).catch(function (error) { return _this.onError(error); });
-                }
-                ConcurrentSpinner.main = function (args) {
-                    window.onload = function (e) {
-                        return new ConcurrentSpinner(document.getElementById("spinner"));
-                    };
-                };
+
                 ConcurrentSpinner.prototype.onSuccess = function (times) {
                     this.onComplete();
                     document.getElementById("end-overlay").classList.add("visible");

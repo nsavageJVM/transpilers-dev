@@ -22,6 +22,7 @@ dev.app.Component = function(opt_label) {
   this.kh_ = null;
 
 };
+
 goog.inherits(dev.app.Component, goog.ui.Component);
 
 dev.app.Component.prototype.fireEvent = function(event) {
